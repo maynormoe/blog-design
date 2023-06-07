@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>blog</title>
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/layout.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/echarts.min.js"></script>
+    <script src="js/echarts-wordcloud.min.js"></script>
+  </head>
+  <body>
+    <script>
+      // 让词云在dom层加载完成后渲染
+      document.addEventListener("DOMContentLoaded", function () {
+        let myCharts = echarts.init(document.querySelector(".word-cloud"));
+
+        const option = {
+          title: {
+            text: "博客标签",
+            x: "10px",
+            top: "10px",
+          },
+          series: [
+            {
+              type: "wordCloud",
+              shape: "circle",
+              gridSize: 2,
+              sizeRange: [10, 35],
+              textStyle: {
+                normal: {
+                  color: () => {
+                    return (
+                      "rgb(" +
+                      [
+                        Math.round(Math.random() * 160),
+                        Math.round(Math.random() * 160),
+                        Math.round(Math.random() * 160),
+                      ].join(",") +
+                      ")"
+                    );
+                  },
+                },
+              },
+              emphasis: {
+                shadowBlur: 0,
+                shadowColor: "#333",
+              },
+              data: [
+                { name: "Vue", value: 300 },
+                { name: "React", value: 300 },
+                { name: "JavaScript", value: 300 },
+                { name: "TypeScript", value: 300 },
+                { name: "Html", value: 300 },
+                { name: "Css", value: 300 },
+                { name: "Scss", value: 300 },
+                { name: "Less", value: 300 },
+                { name: "Java", value: 300 },
+                { name: "SSM", value: 300 },
+                { name: "Springboot", value: 300 },
+              ],
+            },
+          ],
+        };
+
+        myCharts.setOption(option);
+      });
+
+      function goLoginPage() {
+        window.location.href = "/page/login/index.html";
+      }
+    </script>
+    <div class="blog">
+      <header>
+        <div class="logo">
+          <img alt="logo" src="assets/img/logo.png" />
+        </div>
+        <div class="headbar">
+          <div class="headbar-item">
+            <span>首页</span>
+          </div>
+          <div class="headbar-item">
+            <span>说说</span>
+          </div>
+          <div class="headbar-item">
+            <span>关于</span>
+          </div>
+          <div class="headbar-item">
+            <span>目录</span>
+            <ul class="headbar-chilren">
+              <li>
+                <span>归档</span>
+              </li>
+              <li>
+                <span>标签</span>
+              </li>
+              <li>
+                <span>分类</span>
+              </li>
+            </ul>
+          </div>
+          <div class="headbar-item">
+            <span>留言</span>
+          </div>
+          <div class="headbar-item">
+            <span>友链</span>
+          </div>
+        </div>
+        <div class="login-button" onclick="goLoginPage()">
+          <img alt="user" src="assets/img/user.png" />
+          <span>登录</span>
+        </div>
+      </header>
+      <section>
+        <div class="article-list">
+          <div class="article-card card">
+            <div class="article-card__cover">
+              <img alt="cover" src="assets/img/cover_one.jpg" />
+            </div>
+            <div class="article-card__info">
+              <div class="article-card__title">
+                <span> vue+springboot前后端跨域问题处理方案 </span>
+              </div>
+              <div class="author_info">
+                <div class="author_info">
+                  <img alt="author" src="assets/img/avatar.png" />
+                  <span>Maynormoe</span>
+                </div>
+              </div>
+              <div class="article-card__detail">
+                <div class="info-item">
+                  <span> 创建时间: 2023-6-4 </span>
+                </div>
+                <div class="info-item">
+                  <span> 编辑时间: 2023-6-4 </span>
+                </div>
+                <div class="info-item">
+                  <span> 分类： 前端 </span>
+                </div>
+              </div>
+              <div class="article-card__tag">
+                <span>标签：</span>
+                <div class="tag">vue</div>
+                <div class="tag">springboot</div>
+              </div>
+              <div class="article-card__summary">
+                <span
+                  >在使用Vue作为前端框架，Spring
+                  Boot作为后端框架进行开发时，经常会遇到跨域问题。跨域是由于浏览器的同源策略所导致的，即只有在同一域名下的网页才能相互访问。本文将介绍一些有效的解决方案，帮助开发者解决Vue和Spring
+                  Boot前后端跨域问题。</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="article-card card">
+            <div class="article-card__cover">
+              <img alt="cover" src="assets/img/cover_one.jpg" />
+            </div>
+            <div class="article-card__info">
+              <div class="article-card__title">
+                <span> vue+springboot前后端跨域问题处理方案 </span>
+              </div>
+              <div class="author_info">
+                <div class="author_info">
+                  <img alt="author" src="assets/img/avatar.png" />
+                  <span>Maynormoe</span>
+                </div>
+              </div>
+              <div class="article-card__detail">
+                <div class="info-item">
+                  <span> 创建时间: 2023-6-4 </span>
+                </div>
+                <div class="info-item">
+                  <span> 编辑时间: 2023-6-4 </span>
+                </div>
+                <div class="info-item">
+                  <span> 分类： 前端 </span>
+                </div>
+              </div>
+              <div class="article-card__tag">
+                <span>标签：</span>
+                <div class="tag">vue</div>
+                <div class="tag">springboot</div>
+              </div>
+              <div class="article-card__summary">
+                <span
+                  >在使用Vue作为前端框架，Spring
+                  Boot作为后端框架进行开发时，经常会遇到跨域问题。跨域是由于浏览器的同源策略所导致的，即只有在同一域名下的网页才能相互访问。本文将介绍一些有效的解决方案，帮助开发者解决Vue和Spring
+                  Boot前后端跨域问题。</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="article-card card">
+            <div class="article-card__cover">
+              <img alt="cover" src="assets/img/cover_one.jpg" />
+            </div>
+            <div class="article-card__info">
+              <div class="article-card__title">
+                <span> vue+springboot前后端跨域问题处理方案 </span>
+              </div>
+              <div class="author_info">
+                <div class="author_info">
+                  <img alt="author" src="assets/img/avatar.png" />
+                  <span>Maynormoe</span>
+                </div>
+              </div>
+              <div class="article-card__detail">
+                <div class="info-item">
+                  <span> 创建时间: 2023-6-4 </span>
+                </div>
+                <div class="info-item">
+                  <span> 编辑时间: 2023-6-4 </span>
+                </div>
+                <div class="info-item">
+                  <span> 分类： 前端 </span>
+                </div>
+              </div>
+              <div class="article-card__tag">
+                <span>标签：</span>
+                <div class="tag">vue</div>
+                <div class="tag">springboot</div>
+              </div>
+              <div class="article-card__summary">
+                <span
+                  >在使用Vue作为前端框架，Spring
+                  Boot作为后端框架进行开发时，经常会遇到跨域问题。跨域是由于浏览器的同源策略所导致的，即只有在同一域名下的网页才能相互访问。本文将介绍一些有效的解决方案，帮助开发者解决Vue和Spring
+                  Boot前后端跨域问题。</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="article-card card">
+            <div class="article-card__cover">
+              <img alt="cover" src="assets/img/cover_one.jpg" />
+            </div>
+            <div class="article-card__info">
+              <div class="article-card__title">
+                <span> vue+springboot前后端跨域问题处理方案 </span>
+              </div>
+              <div class="author_info">
+                <div class="author_info">
+                  <img alt="author" src="assets/img/avatar.png" />
+                  <span>Maynormoe</span>
+                </div>
+              </div>
+              <div class="article-card__detail">
+                <div class="info-item">
+                  <span> 创建时间: 2023-6-4 </span>
+                </div>
+                <div class="info-item">
+                  <span> 编辑时间: 2023-6-4 </span>
+                </div>
+                <div class="info-item">
+                  <span> 分类： 前端 </span>
+                </div>
+              </div>
+              <div class="article-card__tag">
+                <span>标签：</span>
+                <div class="tag">vue</div>
+                <div class="tag">springboot</div>
+              </div>
+              <div class="article-card__summary">
+                <span
+                  >在使用Vue作为前端框架，Spring
+                  Boot作为后端框架进行开发时，经常会遇到跨域问题。跨域是由于浏览器的同源策略所导致的，即只有在同一域名下的网页才能相互访问。本文将介绍一些有效的解决方案，帮助开发者解决Vue和Spring
+                  Boot前后端跨域问题。</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="article-card card">
+            <div class="article-card__cover">
+              <img alt="cover" src="assets/img/cover_one.jpg" />
+            </div>
+            <div class="article-card__info">
+              <div class="article-card__title">
+                <span> vue+springboot前后端跨域问题处理方案 </span>
+              </div>
+              <div class="author_info">
+                <div class="author_info">
+                  <img alt="author" src="assets/img/avatar.png" />
+                  <span>Maynormoe</span>
+                </div>
+              </div>
+              <div class="article-card__detail">
+                <div class="info-item">
+                  <span> 创建时间: 2023-6-4 </span>
+                </div>
+                <div class="info-item">
+                  <span> 编辑时间: 2023-6-4 </span>
+                </div>
+                <div class="info-item">
+                  <span> 分类： 前端 </span>
+                </div>
+              </div>
+              <div class="article-card__tag">
+                <span>标签：</span>
+                <div class="tag">vue</div>
+                <div class="tag">springboot</div>
+              </div>
+              <div class="article-card__summary">
+                <span
+                  >在使用Vue作为前端框架，Spring
+                  Boot作为后端框架进行开发时，经常会遇到跨域问题。跨域是由于浏览器的同源策略所导致的，即只有在同一域名下的网页才能相互访问。本文将介绍一些有效的解决方案，帮助开发者解决Vue和Spring
+                  Boot前后端跨域问题。</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="article-card card">
+            <div class="article-card__cover">
+              <img alt="cover" src="assets/img/cover_one.jpg" />
+            </div>
+            <div class="article-card__info">
+              <div class="article-card__title">
+                <span> vue+springboot前后端跨域问题处理方案 </span>
+              </div>
+              <div class="author_info">
+                <div class="author_info">
+                  <img alt="author" src="assets/img/avatar.png" />
+                  <span>Maynormoe</span>
+                </div>
+              </div>
+              <div class="article-card__detail">
+                <div class="info-item">
+                  <span> 创建时间: 2023-6-4 </span>
+                </div>
+                <div class="info-item">
+                  <span> 编辑时间: 2023-6-4 </span>
+                </div>
+                <div class="info-item">
+                  <span> 分类： 前端 </span>
+                </div>
+              </div>
+              <div class="article-card__tag">
+                <span>标签：</span>
+                <div class="tag">vue</div>
+                <div class="tag">springboot</div>
+              </div>
+              <div class="article-card__summary">
+                <span
+                  >在使用Vue作为前端框架，Spring
+                  Boot作为后端框架进行开发时，经常会遇到跨域问题。跨域是由于浏览器的同源策略所导致的，即只有在同一域名下的网页才能相互访问。本文将介绍一些有效的解决方案，帮助开发者解决Vue和Spring
+                  Boot前后端跨域问题。</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar">
+          <div class="info-card card">
+            <div class="info-card__banner">
+              <img alt="" src="assets/img/banner.png" />
+            </div>
+            <div class="info-card__base">
+              <img alt="" src="assets/img/avatar.png" />
+              <div class="username">
+                <span> Maynormoe </span>
+              </div>
+              <div class="sign">
+                <span>fuck you, ccp</span>
+              </div>
+            </div>
+            <div class="blog-info">
+              <div class="info-content">
+                <span class="info-title">文章</span>
+                <span class="info-count">20</span>
+              </div>
+              <div class="info-content">
+                <span class="info-title">分类</span>
+                <span class="info-count">20</span>
+              </div>
+              <div class="info-content">
+                <span class="info-title">标签</span>
+                <span class="info-count">20</span>
+              </div>
+            </div>
+            <div class="contact-title">
+              <span>Contact Me</span>
+            </div>
+            <div class="contact">
+              <div class="contact-item">
+                <img alt="github" src="assets/img/github.png" />
+              </div>
+              <div class="contact-item">
+                <img alt="github" src="assets/img/telegram.png" />
+              </div>
+              <div class="contact-item">
+                <img alt="github" src="assets/img/bilibili.png" />
+              </div>
+              <div class="contact-item">
+                <img alt="github" src="assets/img/QQ.png" />
+              </div>
+            </div>
+          </div>
+          <div class="blog-tag card">
+            <div class="word-cloud" style="width: 100%; height: 200px"></div>
+          </div>
+          <div class="website-card card">
+            <div class="title">
+              <span>网站统计</span>
+            </div>
+            <div class="website-card__content">
+              <div class="content-item">
+                <span>文章数目</span>
+                <span>20</span>
+              </div>
+              <div class="content-item">
+                <span>运行时间</span>
+                <span>20天</span>
+              </div>
+              <div class="content-item">
+                <span>访问量</span>
+                <span>20</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <span>Copyright © 2023 Maynormoe. All rights reserved.</span>
+      </footer>
+    </div>
+  </body>
+</html>
